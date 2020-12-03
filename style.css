@@ -12,10 +12,10 @@
 body {
   background-color: #f9fafb;
   font-family: 'Open Sans', sans-serif;
-  display: flex;
+  display: flex; /* only one div class container*/
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 100vh;/* or height */
   margin: 0;
 }
 
@@ -60,7 +60,7 @@ h2 {
   outline: 0;
   border-color: #777;
 }
-
+/* use js to addClass success or error when have this class code below happen*/
 .form-control.success input {
   border-color: var(--success-color);
 }
