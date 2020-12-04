@@ -78,3 +78,65 @@ form.addEventListener('submit', function(e) {
   checkEmail(email);
   checkPasswordsMatch(password, password2);
 });
+
+//jquery
+$(document).ready(function() {
+            const username = $('#username');
+            const email = $('#email');
+            const password = $('#password');
+            const password2 = $('#password2');
+
+            const showError = (input, message) => {
+                input.parent().find('small').text(message).css('color', 'red');
+                input.parent().find('input').css('border-color', 'red');
+
+            }
+            const showSucess = (input) => {
+                input.parent().find('input').css('border-color', 'green');
+            }
+            const checkvalidation = (arrInput) => {
+                $.each(arrInput, (index, input) => {
+                    if (input.val() === "") {
+                        showError(input, `${input.attr('id')} is required`);
+                    } else {
+                        showSucess(input);
+                    }
+                })
+            }
+            const checkLength = (arrInput, min, max) => {
+                $.each(arrInput, (index, input) => {
+                    if (input.val().length < min) {
+                        showError(input, `${input.attr('id')} as least ${min} character`);
+                    } else if (input.val().length > max) {
+                        showError(input, `${input.attr('id')} must be smaller than ${max} character`);
+                    } else {
+                        showSucess(input);
+                    }
+                })
+            }
+            const checkMatchPassword = (input1, input2) => {
+                if (input1.val() !== input2.val()) {
+                    showError(input1, 'password not match');
+                    showError(input2, 'password not match');
+                } else {
+                    showSucess(input1);
+                    showSucess(input2);
+                }
+            }
+            const validateEmail = (input) => {
+                const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                if (!re.test(input.val().trim())) {
+                    showError(input, 'invalid email');
+                } else {
+                    showSucess(input);
+                }
+            }
+            $('form').submit(function(e) {
+                e.preventDefault();
+                checkvalidation([username, email, password, password2])
+                checkLength([username, password], 3, 30);
+                checkMatchPassword(password, password2);
+                validateEmail(email);
+            })
+
+        });
