@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>bai 2</title>
+</head>
+<body>
+    <div class="container">
+        <form id="form" class="form">
+          <h2>Registraiton Form:</h2>
+          <div class="form-control">
+            <label for="userid">User id:</label>
+            <input type="text" id="userid" />
+            <small>Error message</small>
+          </div>
+          <div class="form-control">
+            <label for="password">Password:</label>
+            <input type="password" id="password"  />
+            <small>Error message</small>
+          </div>
+          <div class="form-control">
+            <label for="name">Name:</label>
+            <input type="text" id="name"  />
+            <small>Error message</small>
+          </div>
+          <div class="form-control">
+            <label for="address">Address:</label>
+            <input type="text" id="address"  />
+            <small>Error message</small>
+          </div>
+          <div class="form-control">
+            <label for="conuntry">Country:</label>
+                <select name="country" id="country">
+                    <option disabled selected value> Please select a country</option>
+                    <option value="Vietnam">Vietnam</option>
+                    <option value="China">China</option>
+                    <option value="Us">Us</option>
+                </select>
+            <small>Error message</small>
+          </div>
+          <div class="form-control">
+            <label for="zipcode">Zip code:</label>
+            <input type="number" id="zipcode"  />
+            <small>Error message</small>
+          </div>
+          <div class="form-control">
+            <label for="email">Email:</label>
+            <input type="text" id="email"  />
+            <small>Error message</small>
+          </div>
+          <div class="form-control">
+              Sex:
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+            <small>Error message</small>
+          </div>
+          <div class="form-control">
+              Language:
+            <input type="checkbox" id="english" name="language" value="English">
+            <label for="english"> English</label>
+            <input type="checkbox" id="nonenglish" name="language" value="Non English">
+            <label for="nonenglish"> Non English</label>
+            <small>Error message</small>
+          </div>
+          <div class="form-control">
+           About:
+            <textarea id="about"  rows="5" cols="50">
+            </textarea>
+            <small>Error message</small>
+          </div>
+          <div class="btn">
+              <button type="submit">Submit</button>
+          </div>
+        </form>
+    </div>
+<script src="main.js"></script>  
+</body>
+</html>
