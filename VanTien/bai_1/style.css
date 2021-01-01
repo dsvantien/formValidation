@@ -15,6 +15,7 @@ html{
 
 section{
     background-color: var(--background);
+    width: 100vw;
 }
 ul {
     list-style-type: none;
@@ -55,56 +56,51 @@ li a:hover {
 
 .main{
     display: grid;
-    grid-template-columns:minmax(6rem,1fr) repeat(7,minmax(14rem,1fr)) minmax(6rem,1fr);
-    grid-template-rows: repeat(2,minmax(14rem,1fr));
-    margin: 6rem 0rem 17.5rem 0rem;
+    grid-template-columns:minmax(6rem,1fr) repeat(7,minmax(1rem,1fr)) minmax(1rem,1fr);
+    grid-template-rows: repeat(2,minmax(12rem,1fr));
+    margin: 6rem 0rem 16rem 0rem;
+}
+.hexagon1,.hexagon2,.hexagon3,.hexagon4,.hexagon5{
+    transform: translateY(4rem);
 }
 .hexagon1{
     grid-column: 3/4;
-    grid-row: 1/2;
-    transform: translateY(4rem);
-    
+    grid-row: 1/2; 
 }
 .hexagon2{
     grid-column: 4/5;
     grid-row: 1/2;
-    transform: translateY(4rem);
 }
 .hexagon3{
     grid-column: 5/6;
     grid-row: 1/2;
-    transform: translateY(4rem);
 }
 .hexagon4{
     grid-column: 6/7;
     grid-row: 1/2;
-    transform: translateY(4rem);
 }
 .hexagon5{
     grid-column: 7/8;
     grid-row: 1/2;
-    transform: translateY(4rem);
+}
+.hexagon6,.hexagon7,.hexagon8,.hexagon9{
+    transform: translateX(5.6vw);
 }
 .hexagon6{
     grid-column: 3/4;
     grid-row: 2/2;
-    transform: translateX(8.5rem);  
-   
 }
 .hexagon7{
     grid-column: 4/5;
     grid-row: 2/2;
-    transform: translateX(8.5rem);  
 }
 .hexagon8{
     grid-column: 5/6;
     grid-row: 2/2;
-    transform: translateX(8.5rem); 
 }
 .hexagon9{
     grid-column: 6/7;
     grid-row: 2/2;
-    transform: translateX(8.5rem); 
 }
 img:hover{
     transform: scale(1.2);
@@ -117,4 +113,14 @@ img:hover{
     padding: 1rem;
     font-size: 2rem;
     
+}
+@media only screen and (max-width:1200px){
+    .main div{
+        height: 18rem;
+    }
+}
+@media only screen and (max-width:1023px){
+    .main div{
+        height: 10rem;
+    }
 }
